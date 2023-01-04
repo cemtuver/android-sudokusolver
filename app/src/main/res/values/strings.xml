@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="sudoku_solve_pick_photo">Pick photo</string>
+</resources>
