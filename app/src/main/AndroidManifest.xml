@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="tuver.sudoku">
+    package="tuver.sudokusolver">
 
     <application
-        android:name=".SudokuApp"
+        android:name="tuver.sudokusolver.SudokuSolverApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,7 +20,7 @@
             android:value="ocr" />
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name="tuver.sudokusolver.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

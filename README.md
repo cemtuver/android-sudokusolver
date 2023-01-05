@@ -2,9 +2,9 @@
 
 <table>
     <tr>
-        <td><img src="./docs/img_home.png" /></td>
-        <td><img src="./docs/img_photopick.png" /></td>
-        <td><img src="./docs/img_solution.png" /></td>
+        <td><img src="./docs/img_app_home.png" /></td>
+        <td><img src="./docs/img_app_photopick.png" /></td>
+        <td><img src="./docs/img_app_solution.png" /></td>
     </tr>
 </table>
 
