@@ -37,15 +37,23 @@ class MlKitExtractSudokuBoardUseCase(
 
         for (i in 0 until SUDOKU_BOARD_SIZE) {
             for (j in 0 until SUDOKU_BOARD_SIZE) {
-                textRecognizer.process(cellImageList[i][j], 0).addOnSuccessListener { res ->
-                    res.text.toIntOrNull()?.let { sudokuBoardValues[i][j] = it }
+                textRecognizer.process(cellImageList[i][j], 0).addOnSuccessListener { result ->
+                    result.text.toIntOrNull()?.let { sudokuBoardValues[i][j] = it }
 
                     if (processedCellCount.addAndGet(1) == sudokuBoardValuesSize) {
-                        continuation.resume(SudokuBoard(sudokuBoardValues.toList().map { it.toList() }))
+                        continuation.resume(sudokuBoardValues.toSudokuBoard())
                     }
                 }
             }
         }
+    }
+
+    companion object {
+
+        private fun Array<IntArray>.toSudokuBoard(): SudokuBoard {
+            return SudokuBoard(toList().map { it.toList() })
+        }
+
     }
 
 }
