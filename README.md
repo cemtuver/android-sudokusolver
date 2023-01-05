@@ -13,6 +13,41 @@
 - Text recognition: Google ML Kit
 - Sudoku solver: Brute force
 
+## How it works
+
+### Board detection and extraction
+
+The sudoku board is detected using OpenCV contour detection. To be able to find the contours, the image is converted into the grayscale mode. Then, after finding the largest contour and its corners, perspective transformation is applied to the original image to project the largest contour, the sudoku board, to the result.
+
+<table>
+    <tr>
+        <td width="25%">Original image</td>
+        <td width="25%">Grayscale image</td>
+        <td width="25%">Largest contour</td>
+        <td width="25%">Result image</td>
+    </tr>
+    <tr>
+        <td><img src="./docs/img_opencv_0.png" /></td>
+        <td><img src="./docs/img_opencv_1.png" /></td>
+        <td><img src="./docs/img_opencv_2.png" /></td>
+        <td><img src="./docs/img_opencv_3.png" /></td>
+    </tr>
+</table>
+
+*Original image from [Sudoku Solver using Computer Vision and Deep Learning — Part 1](https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-1-490f08701179).*
+
+### Text recognition
+TBC
+
+### Sudoku solver
+TBC
+
+### Limitations
+- The app can only pick images from the device's gallery at the moment. The camera capture will be implemented in the future.
+- The board detection logic is based on detecting the largest enclosed shape. If there exists a larger shape than the sudoku board, detection and extraction will result in incorrect images. There are more reliable methods, such as detecting the horizontal and vertical lines instead of the largest enclosed shape. However, currently, the app doesn't implement such methods.
+- The board extraction doesn't respect the orientation of the image. If the sudoku board is rotated more than 45 degrees, the extracted image will also be rotated. 
+- According to the [ML Kit text recognition documentations](https://developers.google.com/ml-kit/vision/text-recognition/android), each number should be at least 16x16 pixels. So to get the best performance out of text recognition, the image should be at least 360x360 pixels.
+
 ## Setup
 
 ### OpenCV setup
@@ -35,30 +70,3 @@ android {
 ### ML Kit setup
 1. Set up a Firebase project.
 2. Download "google-services.json" into the "app" folder.
-
-## How it works
-
-### Board detection and extraction
-
-<table>
-    <tr>
-        <td width="25%">Original image</td>
-        <td width="25%">Grayscale image</td>
-        <td width="25%">Largest contour</td>
-        <td width="25%">Perspected image</td>
-    </tr>
-    <tr>
-        <td><img src="./docs/img_opencv_0.png" /></td>
-        <td><img src="./docs/img_opencv_1.png" /></td>
-        <td><img src="./docs/img_opencv_2.png" /></td>
-        <td><img src="./docs/img_opencv_3.png" /></td>
-    </tr>
-</table>
-
-*Original image from [Sudoku Solver using Computer Vision and Deep Learning — Part 1](https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-1-490f08701179).*
-
-### Text recognition
-TBC
-
-### Sudoku solver
-TBC
