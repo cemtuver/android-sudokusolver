@@ -16,7 +16,6 @@
 ## How it works
 
 ### Board detection and extraction
-
 The sudoku board is detected using OpenCV contour detection. To be able to find the contours, the image is converted into the grayscale mode. Then, after finding the largest contour and its corners, perspective transformation is applied to the original image to project the largest contour, the sudoku board, to the result.
 
 <table>
@@ -24,7 +23,7 @@ The sudoku board is detected using OpenCV contour detection. To be able to find 
         <td width="25%">Original image</td>
         <td width="25%">Grayscale image</td>
         <td width="25%">Largest contour</td>
-        <td width="25%">Result image</td>
+        <td width="25%">Board image</td>
     </tr>
     <tr>
         <td><img src="./docs/img_opencv_0.png" /></td>
@@ -37,7 +36,27 @@ The sudoku board is detected using OpenCV contour detection. To be able to find 
 *Original image from [Sudoku Solver using Computer Vision and Deep Learning — Part 1](https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-1-490f08701179).*
 
 ### Text recognition
-TBC
+The board image is divided into cell images, and each cell image is sent to the ML Kit text recognizer. After each cell is processed, the sudoku values array is constructed.
+
+<table>
+    <tr>
+        <td width="25%">Board image</td>
+        <td width="25%">Cell images</td>
+        <td width="50%">Result</td>
+    </tr>
+    <tr>
+        <td><img src="./docs/img_mlkit_0.png" /></td>
+        <td><img src="./docs/img_mlkit_1.png" /></td>
+        <td>
+            [<br />
+            &nbsp;[8, 0, 0, 0, 1, 0, 0, 0, 9], <br />
+            &nbsp;[0, 5, 0, 8, 0, 7, 0, 1, 0], <br />
+            &nbsp;...<br />
+            &nbsp;[3, 0, 0, 0, 5, 0, 0, 0, 8], <br />
+            ]
+        </td>
+    </tr>
+</table>
 
 ### Sudoku solver
 TBC
