@@ -33,7 +33,8 @@ The sudoku board is detected using OpenCV contour detection. To be able to find 
     </tr>
 </table>
 
-*Original image from [Sudoku Solver using Computer Vision and Deep Learning — Part 1](https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-1-490f08701179).*
+<i>Original image is from <a href="https://aakashjhawar.medium.com/sudoku-solver-using-opencv-and-dl-part-1-490f08701179" target="_blank">Sudoku Solver using Computer Vision and Deep Learning — Part 1</a></i>.
+
 
 ### Text recognition
 The board image is divided into cell images, and each cell image is sent to the ML Kit text recognizer. After each cell is processed, the sudoku values array is constructed.
@@ -42,7 +43,7 @@ The board image is divided into cell images, and each cell image is sent to the 
     <tr>
         <td width="25%">Board image</td>
         <td width="25%">Cell images</td>
-        <td width="50%">Result</td>
+        <td width="50%">Values array</td>
     </tr>
     <tr>
         <td><img src="./docs/img_mlkit_0.png" /></td>
@@ -59,7 +60,8 @@ The board image is divided into cell images, and each cell image is sent to the 
 </table>
 
 ### Sudoku solver
-TBC
+The current sudoku solver algorithm tries every possible solution naively and recursively fills out the sudoku board. This approach is described under the "Naive approach" section in [here](https://www.geeksforgeeks.org/sudoku-backtracking-7).
+Even though only one algorithm is implemented at the moment, the implementation is extendable, and some other algorithms will be added in the future.
 
 ### Limitations
 - The app can only pick images from the device's gallery at the moment. The camera capture will be implemented in the future.
