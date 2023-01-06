@@ -1,4 +1,10 @@
-# OpenCV and ML Kit powered Android sudoku solver
+<h1 align="center">
+    OpenCV and ML Kit powered<br />Android sudoku solver
+    <br />
+    <a href="https://github.com/cemtuver/android-sudokusolver/releases">
+        <img src="https://img.shields.io/github/v/release/cemtuver/android-sudokusolver?include_prereleases&label=version">
+    </a>
+</h1>
 
 <table>
     <tr>
