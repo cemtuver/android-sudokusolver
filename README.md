@@ -6,6 +6,10 @@
     </a>
 </h1>
 
+Want to try it out?
+<br />
+The latest APK file is available on the [releases page](https://github.com/cemtuver/android-sudokusolver/releases).
+
 <table>
     <tr>
         <td><img src="./docs/img_app_home.png" /></td>
