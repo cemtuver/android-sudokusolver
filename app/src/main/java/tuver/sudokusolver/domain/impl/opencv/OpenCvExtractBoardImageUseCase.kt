@@ -17,7 +17,7 @@ class OpenCvExtractBoardImageUseCase : ExtractBoardImageUseCase {
         cvtColor(originalMat, processingMat, COLOR_RGB2GRAY)
         // TODO: Bilateral filtering might perform better
         GaussianBlur(processingMat, processingMat, Size(11.0, 11.0), 0.0)
-        adaptiveThreshold(processingMat, processingMat, 255.0, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 5, 2.0);
+        adaptiveThreshold(processingMat, processingMat, 255.0, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY_INV, 13, 2.0);
     }
 
     private fun findLargestContour(processingMat: Mat): MatOfPoint {
