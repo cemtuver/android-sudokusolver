@@ -11,8 +11,8 @@ android {
         applicationId "tuver.sudokusolver"
         minSdk 21
         targetSdk 33
-        versionCode 100000
-        versionName "0.1.0"
+        versionCode 200000
+        versionName "0.2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
