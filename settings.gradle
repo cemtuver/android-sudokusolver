@@ -12,6 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Sudoku"
+rootProject.name = "tuver-android-sudokusolver"
 include ':app'
 include ':opencv'
