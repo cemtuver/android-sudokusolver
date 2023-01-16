@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="tuver.sudokusolver">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:name="tuver.sudokusolver.SudokuSolverApp"
         android:allowBackup="true"

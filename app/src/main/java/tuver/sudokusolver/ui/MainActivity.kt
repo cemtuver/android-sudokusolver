@@ -3,6 +3,7 @@ package tuver.sudokusolver.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import tuver.sudokusolver.R
+import tuver.sudokusolver.ui.sudokudetect.SudokuDetectFragment
 import tuver.sudokusolver.ui.sudokusolve.SudokuSolveFragment
 
 class MainActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, SudokuSolveFragment.newInstance())
+                .replace(R.id.container, SudokuDetectFragment.newInstance())
                 .commitNow()
         }
     }
