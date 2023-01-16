@@ -14,7 +14,7 @@ import tuver.sudokusolver.domain.impl.mlkit.MlKitExtractSudokuBoardUseCase
 import tuver.sudokusolver.domain.impl.opencv.OpenCvExtractBoardImageUseCase
 import tuver.sudokusolver.domain.impl.sudokusolver.BruteForceSudokuSolver
 
-class DefaultDomainModule : DomainModule {
+class DomainModuleImpl : DomainModule {
 
     private val textRecognizer: TextRecognizer
         get() = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)

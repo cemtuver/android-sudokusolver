@@ -3,6 +3,7 @@ package tuver.sudokusolver
 import android.app.Application
 import org.opencv.android.OpenCVLoader
 import tuver.sudokusolver.di.AppModule
+import tuver.sudokusolver.di.impl.AppModuleImpl
 
 class SudokuSolverApp : Application() {
 
@@ -11,7 +12,7 @@ class SudokuSolverApp : Application() {
     }
 
     private fun initAppModule() {
-        appModule = SudokuSolverAppModule()
+        appModule = AppModuleImpl()
     }
 
     override fun onCreate() {
