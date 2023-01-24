@@ -2,6 +2,7 @@ package tuver.sudokusolver.ui.sudokudetect
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.hardware.camera2.CameraManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.SurfaceView
@@ -12,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import org.opencv.android.CameraBridgeViewBase
 import org.opencv.android.CameraBridgeViewBase.CvCameraViewListener2
+import org.opencv.core.Core.*
 import org.opencv.core.Mat
 import org.opencv.core.MatOfPoint
 import org.opencv.core.Scalar
@@ -35,10 +37,11 @@ class SudokuDetectFragment : Fragment(R.layout.fragment_sudoku_detect), CvCamera
     }
 
     private fun onCameraPermissionGranted() {
+
         binding.cameraView.apply {
             setCvCameraViewListener(this@SudokuDetectFragment)
             setCameraPermissionGranted()
-            setCameraIndex(CameraBridgeViewBase.CAMERA_ID_ANY)
+            setCameraIndex(CameraBridgeViewBase.CAMERA_ID_BACK)
             enableView()
 
             visibility = SurfaceView.VISIBLE
@@ -97,6 +100,10 @@ class SudokuDetectFragment : Fragment(R.layout.fragment_sudoku_detect), CvCamera
         val largestContour = findLargestContour(grayMat)
 
         drawContours(rgbaMat, mutableListOf(largestContour), 0, Scalar(255.0, 0.0, 255.0), 10)
+
+        grayMat.release()
+
+//        rotate(rgbaMat, rgbaMat, ROTATE_90_CLOCKWISE)
 
         return rgbaMat
     }
